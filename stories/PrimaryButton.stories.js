@@ -1,21 +1,14 @@
 import { PrimaryButton } from "./PrimaryButton";
-import { useEffect } from "@storybook/addons";
 
 export default {
   title: "Sample",
 };
 
+const div = document.createElement("div");
+div.id = "story";
+
 export const Sample = () => {
-  const div = document.createElement("div");
-  div.id = "story";
-
-  useEffect(() => {
-    PrimaryButton()(div);
-
-    return () => {
-      div.innerHTML = "";
-    };
-  });
+  PrimaryButton()(div)
 
   return div;
 };
